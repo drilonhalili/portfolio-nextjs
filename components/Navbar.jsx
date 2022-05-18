@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai"
 import { useRouter } from "next/router"
@@ -55,12 +54,9 @@ const Navbar = () => {
       }
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-        <Image
-          src="/../public/assets/navLogo.png"
-          alt="/"
-          width="125"
-          height="50"
-        />
+        <h2 className="p-2 border-2 rounded-full text-gray-700">
+          <span>DH</span>
+        </h2>
         <div>
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
             {navbar.map((nav) => {
@@ -93,12 +89,9 @@ const Navbar = () => {
         >
           <div>
             <div className="flex w-full items-center justify-between">
-              <Image
-                src="/../public/assets/navLogo.png"
-                width="87"
-                height="35"
-                alt="/"
-              />
+              <h2 className="p-2 border-2 rounded-full text-gray-700">
+                <span>DH</span>
+              </h2>
               {nav && (
                 <div
                   onClick={handleNav}
