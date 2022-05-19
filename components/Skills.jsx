@@ -5,6 +5,8 @@ import Testimonial from './Testimonial';
 import { skills } from '../utils/data';
 
 const Skills = () => {
+  const path = "/public/assets/skills/"
+  
   return (
     <div id="skills" className="w-full lg:h-screen p-2">
       <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
@@ -17,7 +19,7 @@ const Skills = () => {
             <Testimonial
               key={skill.name}
               name={skill.name}
-              src={`/../public/assets/skills/${skill.image}`}
+              src={`${path}${skill.image}`}
             />
           ))}
         </div>
