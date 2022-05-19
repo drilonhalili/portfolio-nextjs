@@ -5,7 +5,7 @@ import Testimonial from './Testimonial';
 import { skills } from '../utils/data';
 
 const Skills = () => {
-  const path = "/public/assets/skills/"
+  const path = "/assets/skills/"
   
   return (
     <div id="skills" className="w-full lg:h-screen p-2">
