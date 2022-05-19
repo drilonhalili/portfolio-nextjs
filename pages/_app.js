@@ -4,7 +4,8 @@ import { usePanelbear } from '../lib/analytics';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  usePanelbear(process.env.NEXT_PUBLIC_FATHOM_SITE_ID)
+  usePanelbear('https://www.drilonhalili.com', process.env.NEXT_PUBLIC_FATHOM_SITE_ID)
+  
   return (
     <>
       <Navbar />
