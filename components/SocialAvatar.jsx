@@ -17,11 +17,11 @@ const SocialAvatar = ({ className, href, name }) => {
   }
 
   return (
-    <div className={className}>
-      <a target="_blank" href={href} rel="noopener noreferrer">
+    <a target="_blank" href={href} rel="noopener noreferrer">
+      <div className={className}>
         {ICONS[name]}
-      </a>
-    </div>
+      </div>
+    </a>
   )
 }
 
