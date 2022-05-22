@@ -1,6 +1,8 @@
 import Navbar from '../components/Navbar';
 import { usePanelbear } from '../hooks/usePanelbear';
 
+import "react-toastify/dist/ReactToastify.css"
+
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
