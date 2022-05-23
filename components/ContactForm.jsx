@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Form } from "formik"
+import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
 import _ from "lodash"
 import emailjs from "@emailjs/browser"
@@ -35,28 +35,24 @@ const ContactForm = () => {
     message: "",
   }
 
-  const handleSubmit = (
+  const handleSubmit = async (
     { firstName, phone, email, subject, message },
     resetForm
   ) => {
-    try {
-      emailjs.send(
-        "service_ll3cddp",
-        "template_6o50ysq",
-        {
-          firstName,
-          phone,
-          email,
-          subject,
-          message,
-        },
-        "9fXZhaxE0pyNwdJ0h"
-      )
-      toastNotification()
-      resetForm()
-    } catch (error) {
-      // TODO: add a toast notification
-    }
+    await emailjs.send(
+      "service_ll3cddp",
+      "template_6o50ysq",
+      {
+        firstName,
+        phone,
+        email,
+        subject,
+        message,
+      },
+      "9fXZhaxE0pyNwdJ0h"
+    )
+    toastNotification()
+    resetForm()
   }
 
   const toastNotification = () =>
@@ -78,9 +74,8 @@ const ContactForm = () => {
           initialValues={initialValues}
           onSubmit={(values, { resetForm }) => handleSubmit(values, resetForm)}
           validationSchema={ContactFormSchema}
-          onReset
         >
-          {() => (
+          {({ values }) => (
             <Form>
               <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                 <InputForm
@@ -113,17 +108,23 @@ const ContactForm = () => {
                 placeholder="Enter a subject title"
                 padding="py-2"
               />
-              <InputForm
-                labelTitle="Message"
-                as="textarea"
-                id="message"
-                name="message"
-                placeholder="Enter a message"
-                padding="py-2"
-                rows="10"
-                flex="flex"
-              />
-              <button type="submit" className="w-full p-4 text-gray-100 mt-4">
+              <div className="flex flex-col py-2">
+                <label className="uppercase text-sm py-2">Message</label>
+                <Field
+                  as="textarea"
+                  id="message"
+                  name="message"
+                  placeholder="Enter a message"
+                  padding="py-2"
+                  rows="10"
+                  flex="flex"
+                  className="border-2 rounded-lg p-3 flex border-gray-300"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full p-4 text-gray-100 mt-4 shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-[#5651e5] to-[#709dff] text-white"
+              >
                 Send Message
               </button>
             </Form>
