@@ -17,10 +17,10 @@ export const projects = [
   },
   {
     projectName: "My portfolio",
-    webLink: "https://drilonhalili.io",
-    githubLink: "https://github.com/drilonhalili/my-portfolio",
+    webLink: "https://drilonhalili.com",
+    githubLink: "https://github.com/drilonhalili/portfolio-nextjs",
     description: `Portfolio project that tells about me and my projects.`,
-    technicalDetails: "NEXT JS - SASS - ANT DESIGN - TYPESCRIPT",
+    technicalDetails: "NEXT JS - TAILWIND - EMAILJS - FORMIK",
   },
   {
     projectName: "Ishop",
@@ -73,28 +73,40 @@ export const skills = [
     image: "javascript.png",
   },
   {
+    name: "TypeScript",
+    image: "typescript.png",
+  },
+  {
     name: "React",
     image: "react.png",
+  },
+  {
+    name: "Redux",
+    image: "redux.png",
   },
   {
     name: "Tailwind",
     image: "tailwind.png",
   },
   {
+    name: "Bootstrap",
+    image: "bootstrap.png",
+  },
+  {
     name: "Firebase",
     image: "firebase.png",
   },
   {
+    name: "AWS",
+    image: "aws.png",
+  },
+  {
+    name: "Twilio",
+    image: "twilio.png",
+  },
+  {
     name: "Github",
     image: "github1.png",
-  },
-  {
-    name: "Shopify",
-    image: "shopify.png",
-  },
-  {
-    name: "Twillio",
-    image: "twillio.png",
   },
 ]
 
